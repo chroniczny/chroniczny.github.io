@@ -1,0 +1,614 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.grid-container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto; }
+  .grid-container .row {
+    /* --- KOLUMNY!!! --- */ }
+    .grid-container .row::after, .grid-container .row::before {
+      content: "";
+      display: table;
+      clear: both; }
+    .grid-container .row [class*='col-'] {
+      float: left;
+      min-height: 1px;
+      margin: 0;
+      padding: 0px;
+      box-sizing: border-box; }
+    .grid-container .row .col-1 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-1 {
+          width: 8.33333%; } }
+    .grid-container .row .col-2 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-2 {
+          width: 16.66667%; } }
+    .grid-container .row .col-3 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-3 {
+          width: 25%; } }
+    .grid-container .row .col-4 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-4 {
+          width: 33.33333%; } }
+    .grid-container .row .col-5 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-5 {
+          width: 41.66667%; } }
+    .grid-container .row .col-6 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-6 {
+          width: 50%; } }
+    .grid-container .row .col-7 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-7 {
+          width: 58.33333%; } }
+    .grid-container .row .col-8 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-8 {
+          width: 66.66667%; } }
+    .grid-container .row .col-9 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-9 {
+          width: 75%; } }
+    .grid-container .row .col-10 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-10 {
+          width: 83.33333%; } }
+    .grid-container .row .col-11 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-11 {
+          width: 91.66667%; } }
+    .grid-container .row .col-12 {
+      width: 100%;
+      float: left; }
+      @media (min-width: 450px) {
+        .grid-container .row .col-12 {
+          width: 100%; } }
+
+body {
+  background-color: lightgrey;
+  font-family: "Calibri Light", Arial, sans-serif;
+  background-image: url("../images/back_skin.jpg");
+  background-repeat: repeat; }
+
+@keyframes sizeDotL {
+  0% {
+    width: 5px;
+    height: 5px; }
+  25% {
+    width: 10px;
+    height: 10px; }
+  50% {
+    width: 5px;
+    height: 5px; }
+  75% {
+    width: 3px;
+    height: 3px; }
+  100% {
+    width: 5px;
+    height: 5px; } }
+
+@keyframes sizeDotN {
+  0% {
+    width: 3px;
+    height: 3px; }
+  25% {
+    width: 5px;
+    height: 5px; }
+  50% {
+    width: 10px;
+    height: 10px; }
+  75% {
+    width: 5px;
+    height: 5px; }
+  100% {
+    width: 3px;
+    height: 3px; } }
+
+@keyframes sizeDotR {
+  0% {
+    width: 3px;
+    height: 3px; }
+  25% {
+    width: 3px;
+    height: 3px; }
+  50% {
+    width: 5px;
+    height: 5px; }
+  75% {
+    width: 10px;
+    height: 10px; }
+  100% {
+    width: 5px;
+    height: 5px; } }
+
+.preloader {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .preloader > div {
+    width: 40px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .preloader > div .preEl, .preloader > div .preEr {
+      width: 10px;
+      height: 10px;
+      background-color: lightgrey;
+      border-radius: 50%; }
+    .preloader > div .preEl {
+      animation: sizeDotL 0.5s infinite; }
+    .preloader > div .preEr {
+      animation: sizeDotR 0.5s infinite; }
+    .preloader > div .preN {
+      width: 10px;
+      height: 10px;
+      background-color: palevioletred;
+      border-radius: 50%;
+      animation: sizeDotN 0.5s infinite; }
+  .preloader .preMouth {
+    width: 40px;
+    height: 5px;
+    background-color: #cc0202;
+    border-radius: 2px; }
+
+nav {
+  width: 100%;
+  max-width: 800px;
+  height: 40px;
+  background-color: black;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  nav ul li {
+    color: white;
+    width: 30vw;
+    height: 100%;
+    margin-left: 5vh; }
+    nav ul li :hover {
+      color: #cc0202; }
+
+.row {
+  margin: 0 auto; }
+
+.eyebrows {
+  height: 10vh;
+  background-color: white; }
+
+.forEyes {
+  height: 15vh;
+  background-color: white;
+  display: flex;
+  justify-content: space-between; }
+  .forEyes .eye {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 0 0 auto;
+    border: 3px solid;
+    border-top-color: lightgrey;
+    border-bottom-color: white;
+    border-left: white;
+    border-right: white; }
+    .forEyes .eye .plus {
+      width: 20%;
+      height: 20%;
+      position: relative; }
+      .forEyes .eye .plus .eyeLine {
+        position: absolute;
+        top: 5px;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        background-color: lightgrey; }
+      .forEyes .eye .plus .eyeDot {
+        position: absolute;
+        top: 5px;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        background-color: lightgrey;
+        z-index: 2;
+        transform: rotate(90deg); }
+
+.forNose {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5vh; }
+  .forNose .chick {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    cursor: pointer; }
+    .forNose .chick h3 {
+      color: lightgrey; }
+    .forNose .chick:hover {
+      border: 1px solid palevioletred;
+      background-color: palevioletred;
+      transition: all 0.5s; }
+      .forNose .chick:hover h3 {
+        color: white; }
+  .forNose .nose {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: lightgrey;
+    background-image: url("../images/jinn_single100.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 0 0 auto;
+    position: relative;
+    -webkit-box-shadow: 0px 6px 7px -3px rgba(100, 100, 100, 0.5);
+    -moz-box-shadow: 0px 6px 7px -3px rgba(100, 100, 100, 0.5);
+    box-shadow: 0px 6px 7px -3px rgba(100, 100, 100, 0.5); }
+    .forNose .nose .lightDot1, .forNose .nose .lightDot2 {
+      position: absolute;
+      top: 0;
+      left: 70px;
+      width: 30%;
+      height: 100%;
+      display: flex;
+      justify-content: center; }
+      .forNose .nose .lightDot1 div, .forNose .nose .lightDot2 div {
+        width: 100%;
+        height: 8%;
+        background: -moz-radial-gradient(center, ellipse cover, white 0%, white 2%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
+        /* FF3.6-15 */
+        background: -webkit-radial-gradient(center, ellipse cover, white 0%, white 2%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(ellipse at center, white 0%, white 2%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
+        /* IE6-9 fallback on horizontal gradient */ }
+
+.mouth {
+  background-color: white;
+  padding: 10px 10px; }
+  .mouth .about {
+    display: flex; }
+  .mouth .topTeeth, .mouth .bottomTeeth {
+    display: flex; }
+
+/*--- content ABOUT --*/
+.about {
+  height: 25vh;
+  background-color: transparent;
+  background-image: url("../images/back_skin.jpg"); }
+  .about .bioText {
+    flex: 0 1 auto;
+    color: white;
+    font-family: "Calibri Light", Calibri, sans-serif;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .about .bioText > div {
+      margin: 5%; }
+  .about .lip {
+    box-sizing: border-box;
+    flex: stretch;
+    background-color: #cc0202;
+    flex: 0 5 auto; }
+
+.forTopLips {
+  height: 5vh;
+  background-color: #cc0202; }
+
+.topTeeth, .bottomTeeth {
+  height: 15vh;
+  background-color: #510006;
+  background-image: url("../images/back_skin.jpg");
+  background-repeat: repeat; }
+  .topTeeth .lip, .bottomTeeth .lip {
+    box-sizing: border-box;
+    flex: stretch;
+    background-color: #cc0202; }
+  .topTeeth a, .bottomTeeth a {
+    cursor: pointer;
+    flex: stretch;
+    flex: 0 1 auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: lightgrey;
+    line-height: 3em; }
+    .topTeeth a .tooth, .bottomTeeth a .tooth {
+      background-color: lightgoldenrodyellow;
+      height: 100%; }
+    .topTeeth a:hover, .bottomTeeth a:hover {
+      position: relative;
+      color: whitesmoke; }
+      .topTeeth a:hover .tooth, .bottomTeeth a:hover .tooth {
+        background-color: transparent;
+        border-top: 1px solid transparent; }
+
+.topTeeth .tooth {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  -webkit-box-shadow: inset 0px 6px 7px -3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0px 6px 7px -3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 6px 7px -3px rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px; }
+
+.bottomTeeth .tooth {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  -webkit-box-shadow: inset 0px -6px 7px -3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0px -6px 7px -3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px -6px 7px -3px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid #f5f5a4;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px; }
+
+.forTopLips {
+  height: 4vh;
+  background-color: #cc0202;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  position: relative; }
+  .forTopLips div.reflex {
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+    top: -4px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,ffffff+100&1+1,0+30,0+100 */
+    background: -moz-radial-gradient(center, ellipse cover, white 0%, white 2%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, white 0%, white 1%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, white 0%, white 1%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */ }
+  .forTopLips .lip {
+    height: 100%;
+    -webkit-box-shadow: 0px 5px 6px -4px rgba(100, 100, 100, 0.5);
+    -moz-box-shadow: 0px 5px 6px -4px rgba(100, 100, 100, 0.5);
+    box-shadow: 0px 5px 6px -4px rgba(100, 100, 100, 0.5); }
+
+.forBottomLips {
+  height: 4vh;
+  background-color: #cc0202;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  -webkit-box-shadow: 0px 6px 7px -3px rgba(100, 100, 100, 0.5);
+  -moz-box-shadow: 0px 6px 7px -3px rgba(100, 100, 100, 0.5);
+  box-shadow: 0px 6px 7px -3px rgba(100, 100, 100, 0.5);
+  margin-bottom: 10px; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  background-color: white; }
+  footer div {
+    margin-top: 2vh;
+    width: 100px;
+    height: 100px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-top: 1px solid lightgrey;
+    -webkit-box-shadow: 0px 5px 6px -4px rgba(100, 100, 100, 0.5);
+    -moz-box-shadow: 0px 5px 6px -4px rgba(100, 100, 100, 0.5);
+    box-shadow: 0px 5px 6px -4px rgba(100, 100, 100, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    footer div h3 {
+      color: lightgrey; }
+
+section, footer {
+  -webkit-box-shadow: 0px 9px 7px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 9px 7px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 9px 7px 1px rgba(0, 0, 0, 0.5); }
+
+@media (max-width: 280px) {
+  .forNose .nose {
+    max-width: 100px;
+    max-height: 100px; }
+    .forNose .nose .lightDot1, .forNose .nose .lightDot2 {
+      position: absolute;
+      top: 0;
+      left: 35px; }
+  .forNose .chick {
+    display: none; }
+  nav ul {
+    display: block; }
+    nav ul li {
+      display: inline-block; }
+  .about {
+    height: 40vh; }
+    .about .bioText {
+      font-size: 1em; } }
+
+@media (min-width: 280px) and (max-width: 340px) {
+  .forNose .nose {
+    max-width: 100px;
+    max-height: 100px; }
+    .forNose .nose .lightDot1, .forNose .nose .lightDot2 {
+      position: absolute;
+      top: 0;
+      left: 35px; }
+  .forNose .chick {
+    max-width: 50px;
+    max-height: 50px; }
+  nav ul li {
+    display: none; }
+  .about {
+    height: 35vh; }
+    .about .bioText {
+      font-size: 1.0em; } }
+
+@media (min-width: 340px) and (max-width: 450px) {
+  .forNose .nose {
+    max-width: 100px;
+    max-height: 100px; }
+    .forNose .nose .lightDot1, .forNose .nose .lightDot2 {
+      position: absolute;
+      top: 0;
+      left: 35px; }
+  nav ul li {
+    display: none; }
+  .about .bioText {
+    font-size: 1.0em; } }
+
+@media (min-width: 450px) {
+  nav ul li {
+    display: none; }
+  .about .bioText {
+    font-size: 1.1em; } }
+
+@media (min-width: 600px) {
+  nav ul li {
+    display: none; }
+  .about .bioText {
+    font-size: 1.3em; } }
+
+@keyframes lightBox {
+  0% {
+    background-color: transparent; }
+  100% {
+    background-color: rgba(0, 0, 0, 0.9); } }
+
+@keyframes appearSize {
+  0% {
+    width: 0;
+    height: 0; }
+  40% {
+    width: 0;
+    height: 0; }
+  100% {
+    width: 800px;
+    height: 100vh; } }
+
+#lightbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  animation: lightBox 2s 1;
+  background-color: rgba(0, 0, 0, 0.9); }
+  #lightbox iframe {
+    width: 850px;
+    height: 100vh;
+    overflow: auto;
+    background-color: transparent;
+    z-index: 5;
+    animation: appearSize 1s 1; }
+  #lightbox .close {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    top: 2vh;
+    right: 5vw;
+    z-index: 10;
+    cursor: pointer;
+    font-family: "Calibri Light", Calibri, sans-serif;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 2em; }
+    #lightbox .close > div {
+      width: 80%;
+      height: 10%;
+      background-color: white;
+      position: relative;
+      margin: 0; }
+      #lightbox .close > div:first-child {
+        transform: rotate(45deg);
+        top: 18px;
+        right: -4px; }
+      #lightbox .close > div:nth-child(2) {
+        transform: rotate(-45deg);
+        top: 14px;
+        right: -4px; }
+
+/*# sourceMappingURL=style.css.map */

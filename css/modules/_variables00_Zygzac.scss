@@ -1,0 +1,102 @@
+$num-cols: 8;
+$num-rows: 6;
+
+$num-fragment: $num-cols * $num-rows;
+
+$img-width: 768px;
+$img-height: 512px;
+
+@keyframes plus-anime { // animacja dla np. nieparzystych kafelków wysuwa dół do przodu
+  0% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 0 0 0 black;
+  }
+  10% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 0 0 0 black;
+  }
+
+  50% {
+    transform: perspective(400px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 5px 8px -4px black;
+  }
+  75% {
+    transform: perspective(400px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 5px 8px -4px black;
+  }
+
+
+  100% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 0 0 0 black;
+  }
+}
+
+@keyframes minus-anime { // animacja dla np. parzystych kafelków wysuwa górę do przodu
+  0% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+
+    box-shadow: 0 0 0 0 black;
+  }
+  10% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+
+    box-shadow: 0 0 0 0 black;
+  }
+
+  50% {
+    transform: perspective(400px) rotateX(-10deg) rotateY(-10deg);
+    box-shadow: 0 -5px 8px -4px black;
+  }
+  75% {
+    transform: perspective(400px) rotateX(-10deg) rotateY(-10deg);
+    box-shadow: 0 -5px 8px -4px black;
+  }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 0 0 0 black;
+  }
+}
+
+@mixin push-zygzac($col-index, $row-index) { // uzależniamy użycie plus- lub minus-anime od indexu x i y kafelka
+                                      // podwójna pętla robi jakby szachownicę
+  @if ($row-index)%2==0 {
+    @if ($row-index*$col-index - $col-index )%2==0 { // dla parzystych rzędów robię kolumny nieparzystymi
+      animation: plus-anime 2s 1;
+    } @else {
+      animation: minus-anime 2s 1;
+    }
+  } @else { // dla nieparzystych rzędów kolumny zacnę od będą parzyste
+    @if ($row-index*$col-index)%2==0 { //
+      animation: minus-anime 2s 1;
+    } @else {
+      animation: plus-anime 2s 1;
+    }
+  }
+}
+
+// for gradient reflex
+@mixin gradient-reflex-bright($position, $pos-opposite) { // np. left, right
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.4+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient($position,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.35) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient($position,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.35) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to $pos-opposite,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#66ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+@mixin gradient-reflex-dark($position, $pos-opposite) { // np. left, right
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.4+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient($position,  rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.05) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient($position,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.05) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to $pos-opposite,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.05) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+
+
+
+
+
+
+
